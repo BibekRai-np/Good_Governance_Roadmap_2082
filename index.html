@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>सुशासन मार्गचित्र २०८२</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#B71C1C;--red2:#C62828;--red3:#E53935;
+  --gold:#F9A825;--gold2:#FF8F00;
+  --bg:#FAFAF8;--white:#fff;
+  --text:#1A1A1A;--muted:#5C5C5C;
+  --border:#E0DDD8;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#7B0000,#C62828 50%,#BF360C);color:#fff;padding:64px 20px 48px;text-align:center}
+.hero-logo{font-size:48px;margin-bottom:16px}
+.hero h1{font-family:'Eczar',Georgia,serif;font-size:clamp(26px,5vw,48px);font-weight:800;line-height:1.2;margin-bottom:8px}
+.hero-en{font-size:16px;opacity:.8;margin-bottom:6px}
+.hero-meta{font-size:12px;opacity:.65}
+.hero-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:24px}
+.pill{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:5px 14px;font-size:12px}
+
+/* STATS */
+.stats{background:#7B0000;color:#fff;padding:20px 0}
+.stats-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:0;padding:0 16px}
+.stat{text-align:center;padding:12px 8px;border-right:1px solid rgba(255,255,255,.15)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Eczar',serif;font-size:32px;font-weight:800;color:var(--gold);line-height:1}
+.stat-l{font-size:11px;opacity:.75;margin-top:4px}
+
+/* NAV */
+.snav{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.97);border-bottom:1px solid var(--border);padding:0 12px}
+.snav-inner{max-width:1000px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding:8px 0}
+.snav-inner::-webkit-scrollbar{display:none}
+.nb{flex-shrink:0;padding:6px 14px;border-radius:20px;border:none;background:transparent;color:var(--muted);cursor:pointer;font-size:12px;font-family:'Poppins',sans-serif;font-weight:500;white-space:nowrap;transition:.2s}
+.nb:hover,.nb.on{background:var(--red2);color:#fff}
+
+/* LAYOUT */
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+.sec{padding:52px 0 36px}
+.sec-bg{background:#fff}
+.sh{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.si{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.st{font-family:'Eczar',Georgia,serif;font-size:24px;font-weight:700;color:#7B0000;line-height:1.2}
+.ss{font-size:12px;color:var(--muted);margin-top:2px}
+.divbar{height:3px;background:linear-gradient(90deg,var(--red2),var(--gold),transparent);border-radius:2px;margin-bottom:28px}
+
+/* CARDS */
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;transition:.2s}
+.card:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px)}
+.ci{font-size:28px;margin-bottom:10px;display:block}
+.ct{font-family:'Eczar',serif;font-size:16px;font-weight:700;margin-bottom:6px}
+.cd{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:28px}
+.pillar{border-radius:12px;padding:18px;position:relative;overflow:hidden}
+.pn{position:absolute;top:8px;right:12px;font-family:'Eczar',serif;font-size:44px;font-weight:800;opacity:.1;line-height:1}
+.pe{font-size:24px;margin-bottom:8px;display:block}
+.pt{font-family:'Eczar',serif;font-size:15px;font-weight:700;margin-bottom:6px}
+.pd{font-size:12px;line-height:1.6;opacity:.85}
+
+/* HIGHLIGHT BOXES */
+.hb{border-radius:10px;padding:16px 18px;margin-bottom:14px;border-left:4px solid}
+.hb-r{background:#FFF3F3;border-color:#C62828}
+.hb-y{background:#FFF8E1;border-color:#F9A825}
+.hb-g{background:#F0FFF4;border-color:#43A047}
+.hb-b{background:#E8F4FD;border-color:#1976D2}
+.ht{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.hb-r .ht{color:#C62828}.hb-y .ht{color:#E65100}.hb-g .ht{color:#2E7D32}.hb-b .ht{color:#1565C0}
+.hb ul{padding-left:16px;font-size:13px;line-height:1.85}
+.hb p{font-size:13px;line-height:1.7}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tb{padding:7px 16px;border-radius:20px;border:1.5px solid var(--border);background:#fff;cursor:pointer;font-size:12.5px;font-family:'Poppins',sans-serif;font-weight:500;color:var(--muted);transition:.2s}
+.tb.on,.tb:hover{background:var(--red2);border-color:var(--red2);color:#fff}
+.tc{display:none}.tc.on{display:block}
+
+/* SECTOR CARDS */
+.scards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.sc{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:.2s}
+.sc:hover{box-shadow:0 4px 14px rgba(0,0,0,.1);transform:translateY(-1px)}
+.sc-top{padding:16px;color:#fff}
+.sc-top h3{font-family:'Eczar',serif;font-size:15px;font-weight:700;margin-bottom:3px}
+.sc-top p{font-size:11px;opacity:.85}
+.sc-body{padding:14px 16px}
+.sc-list{list-style:none;font-size:12.5px;line-height:1.9}
+.sc-list li{border-bottom:1px dashed var(--border);padding:2px 0;display:flex;gap:6px}
+.sc-list li:last-child{border-bottom:none}
+.sc-list li::before{content:'→';color:var(--red2);font-weight:bold;flex-shrink:0}
+
+/* ACCORDION */
+.acc{border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.acc-h{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;cursor:pointer;font-weight:600;font-size:14px;background:#fff;transition:.15s;user-select:none}
+.acc-h:hover{background:#F5F5F5}
+.arr{transition:transform .3s;font-size:16px;color:var(--red2)}
+.acc.open .arr{transform:rotate(180deg)}
+.acc-b{display:none;padding:0 18px 18px;background:#fff;font-size:13.5px;line-height:1.75;color:var(--muted)}
+.acc.open .acc-b{display:block}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--red2),var(--gold));border-radius:1px}
+.tli{position:relative;margin-bottom:22px;padding:14px 18px;background:#fff;border:1px solid var(--border);border-radius:10px}
+.tli::before{content:'';position:absolute;left:-22px;top:16px;width:10px;height:10px;background:var(--red2);border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 2px var(--red2)}
+.tag{display:inline-block;padding:2px 9px;border-radius:10px;font-size:10.5px;font-weight:700;margin-bottom:5px}
+.ti{background:#FFF3F3;color:#C62828}.ty{background:#FFF8E1;color:#E65100}
+.tg{background:#E8F5E9;color:#2E7D32}.tb2{background:#E3F2FD;color:#1565C0}
+.tl-t{font-size:13px;font-weight:600;margin-bottom:3px}
+.tl-d{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* KPI */
+.kpi-item{margin-bottom:18px}
+.kpi-h{display:flex;justify-content:space-between;margin-bottom:5px;font-size:13px}
+.kpi-l{font-weight:500}
+.kpi-v{color:var(--muted);font-size:12px}
+.bar{height:8px;background:#E0E0E0;border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--red2),var(--gold))}
+
+/* PROBLEM-SOLUTION */
+.ps{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-bottom:16px}
+@media(max-width:600px){.ps{grid-template-columns:1fr}}
+.ps-arr{width:32px;height:32px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;align-self:center}
+.ps-box{border-radius:10px;padding:14px 16px}
+.ps-p{background:#FFF3F3;border:1px solid #FFCDD2}
+.ps-s{background:#F0FFF4;border:1px solid #C8E6C9}
+.ps-box .ht{margin-bottom:6px}
+.ps-box ul{padding-left:14px;font-size:12.5px;line-height:1.85}
+
+/* QUOTE */
+.quote{background:linear-gradient(135deg,#7B0000,#B71C1C);color:#fff;border-radius:14px;padding:28px 32px;position:relative;margin:28px 0;overflow:hidden}
+.quote::before{content:'"';font-family:'Eczar',serif;font-size:90px;position:absolute;top:-15px;left:16px;opacity:.15;line-height:1}
+.q-text{font-family:'Eczar',serif;font-size:17px;line-height:1.7;position:relative;z-index:1}
+.q-src{font-size:11px;opacity:.65;margin-top:10px;position:relative;z-index:1}
+
+/* INFOGRAPHIC */
+.info-row{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin:28px 0}
+.info-c{width:110px;text-align:center}
+.ic-ring{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-direction:column;margin:0 auto 8px;border:3px solid}
+.ic-n{font-family:'Eczar',serif;font-size:20px;font-weight:800;line-height:1}
+.ic-u{font-size:9px;opacity:.7;font-weight:500}
+.ic-l{font-size:11px;font-weight:500;color:var(--muted);line-height:1.3}
+
+/* COMMITTEE */
+.comm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.mc{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center}
+.ma{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--red2),var(--gold));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;margin:0 auto 8px}
+.mn{font-size:12.5px;font-weight:600;margin-bottom:2px;color:var(--text)}
+.mr{font-size:10.5px;color:var(--muted);line-height:1.4}
+
+/* CHART */
+.chart-box{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px;margin:18px 0}
+.ch-t{font-family:'Eczar',serif;font-size:15px;font-weight:700;margin-bottom:16px}
+
+/* 2-col */
+.col2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.col2{grid-template-columns:1fr}}
+
+footer{background:#7B0000;color:rgba(255,255,255,.8);text-align:center;padding:28px 16px;font-size:12px}
+footer strong{color:#fff}
+footer .ft{font-family:'Eczar',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-logo">🏛️</div>
+  <p style="font-size:11px;opacity:.6;margin-bottom:10px">नेपाल सरकार | प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय | सिंहदरबार, काठमाडौं</p>
+  <h1>सुशासन मार्गचित्र</h1>
+  <p class="hero-en">Good Governance Blueprint — २०८२</p>
+  <p class="hero-meta">मिति: २०८२ चैत ३ | १५ सदस्यीय विशेष समितिको प्रतिवेदन</p>
+  <div class="hero-pills">
+    <span class="pill">१२ परिच्छेद</span>
+    <span class="pill">६ कार्यक्षेत्र</span>
+    <span class="pill">जेनजी आन्दोलन प्रेरित</span>
+    <span class="pill">तीनै तहका सरकार</span>
+    <span class="pill">भ्रष्टाचार नियन्त्रण</span>
+    <span class="pill">सुशीला कार्की सरकार</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-n">१५</div><div class="stat-l">समिति सदस्य</div></div>
+    <div class="stat"><div class="stat-n">१२</div><div class="stat-l">परिच्छेद</div></div>
+    <div class="stat"><div class="stat-n">७७+</div><div class="stat-l">दिन कार्यकाल</div></div>
+    <div class="stat"><div class="stat-n">३११+</div><div class="stat-l">सहयोगी अधिकारी</div></div>
+    <div class="stat"><div class="stat-n">८००+</div><div class="stat-l">पृष्ठ प्रतिवेदन</div></div>
+    <div class="stat"><div class="stat-n">३</div><div class="stat-l">सरकारी तह</div></div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="snav">
+  <div class="snav-inner">
+    <button class="nb on" onclick="sv('intro',this)">परिचय</button>
+    <button class="nb" onclick="sv('vision',this)">दूरदृष्टि</button>
+    <button class="nb" onclick="sv('chapters',this)">परिच्छेद</button>
+    <button class="nb" onclick="sv('problems',this)">समस्या</button>
+    <button class="nb" onclick="sv('reforms',this)">सुधार</button>
+    <button class="nb" onclick="sv('sectors',this)">क्षेत्रगत</button>
+    <button class="nb" onclick="sv('timeline',this)">समयरेखा</button>
+    <button class="nb" onclick="sv('kpi',this)">KPI</button>
+    <button class="nb" onclick="sv('committee',this)">समिति</button>
+  </div>
+</nav>
+
+<!-- INTRO -->
+<section class="sec" id="intro">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#FFF3F3">🎯</div>
+      <div><div class="st">पृष्ठभूमि र उद्देश्य</div><div class="ss">Background & Purpose</div></div>
+    </div>
+    <div class="divbar"></div>
+
+    <div class="quote">
+      <p class="q-text">"नेपालको सार्वजनिक निकायमा व्याप्त भ्रष्टाचार तथा सार्वजनिक सेवा प्रवाहमा देखिएका समस्या पहिचान गर्दै सुझाव सहितको सुशासन मार्गचित्र तयार गर्ने गहन जिम्मेवारी।"</p>
+      <p class="q-src">— समिति प्रस्तावना, २०८२ पुष १४</p>
+    </div>
+
+    <div class="col2">
+      <div>
+        <div class="hb hb-b">
+          <div class="ht">⚡ गठनको आधार</div>
+          <p>२०८२ पुष १४ गतेको सम्माननीय प्रधानमन्त्रीस्तरीय निर्णयानुसार यो समिति गठन भएको हो। जेनजी आन्दोलन (भदौ २३–२४) र सरकारसँगको सम्झौता (मंसीर २४, २०८२) को प्रत्यक्ष परिणामस्वरूप यो ऐतिहासिक कार्यभार सुम्पिएको छ।</p>
+        </div>
+        <div class="hb hb-r">
+          <div class="ht">📋 ६ कार्यदिशहरू</div>
+          <ul>
+            <li>भ्रष्टाचारजन्य क्रियाकलापको पहिचान</li>
+            <li>कानूनी सुधारका सुझाव</li>
+            <li>नीतिगत व्यवस्था सुधार</li>
+            <li>संस्थागत पुनर्संरचना</li>
+            <li>जनशक्ति व्यवस्थापन</li>
+            <li>प्रक्रियागत सुधार</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="hb hb-y">
+          <div class="ht">🗳️ राजनीतिक आधारहरू</div>
+          <ul>
+            <li>जेनजी आन्दोलन २०८२ भदौका माग</li>
+            <li>सरकार–आन्दोलनकारी सम्झौता (मंसीर २४)</li>
+            <li>फागुन २१ को प्रतिनिधिसभा निर्वाचन</li>
+            <li>प्रमुख दलहरूको घोषणापत्र</li>
+            <li>मुख्य सचिव, सचिवहरूसँगको कार्यशाला</li>
+            <li>सबै मन्त्रालयसँग परामर्श</li>
+          </ul>
+        </div>
+        <div class="hb hb-g">
+          <div class="ht">✅ समग्र लक्ष्य</div>
+          <p>तीनै तहका सार्वजनिक निकायको काम र सेवा प्रवाहलाई <strong>चुस्त, पारदर्शी, जवाफदेही, मितव्ययी, प्रविधिमैत्री</strong> तथा <strong>नागरिकमैत्री</strong> बनाउने।</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section class="sec sec-bg" id="vision">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#FFF8E1">🌟</div>
+      <div><div class="st">दूरदृष्टि र मूल सिद्धान्त</div><div class="ss">Vision & Core Principles</div></div>
+    </div>
+    <div class="divbar"></div>
+    <div class="pillars">
+      <div class="pillar" style="background:#FFF3F3;color:#B71C1C"><span class="pn">१</span><span class="pe">⚖️</span><div class="pt">पारदर्शिता</div><div class="pd">सबै सरकारी कार्यहरू खुला र सार्वजनिक। बजेट, खर्च र निर्णय प्रक्रियामा पूर्ण पहुँच।</div></div>
+      <div class="pillar" style="background:#FFF8E1;color:#E65100"><span class="pn">२</span><span class="pe">🎯</span><div class="pt">जवाफदेहिता</div><div class="pd">कार्यसम्पादनमा स्पष्ट जिम्मेवारी। नतिजाका आधारमा दण्ड र पुरस्कार।</div></div>
+      <div class="pillar" style="background:#E8F5E9;color:#1B5E20"><span class="pn">३</span><span class="pe">🔬</span><div class="pt">प्रभावकारिता</div><div class="pd">तथ्यमा आधारित नीति निर्माण। मापनयोग्य लक्ष्य र KPI प्रणाली।</div></div>
+      <div class="pillar" style="background:#E3F2FD;color:#0D47A1"><span class="pn">४</span><span class="pe">💻</span><div class="pt">डिजिटल सुशासन</div><div class="pd">e-Governance। कागजरहित सेवा। डिजिटल भुक्तानी र अभिलेख।</div></div>
+      <div class="pillar" style="background:#F3E5F5;color:#4A148C"><span class="pn">५</span><span class="pe">🤝</span><div class="pt">समावेशी विकास</div><div class="pd">सामाजिक न्याय। महिला, युवा, दलित, जनजाति समावेश।</div></div>
+      <div class="pillar" style="background:#E0F7FA;color:#006064"><span class="pn">६</span><span class="pe">🌱</span><div class="pt">दिगो विकास</div><div class="pd">वातावरण संरक्षण। दीर्घकालीन योजना। भावी पुस्ताको हित।</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTERS -->
+<section class="sec" id="chapters">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#E8EAF6">📚</div>
+      <div><div class="st">परिच्छेदगत सारांश</div><div class="ss">Chapter-wise Summary — सबै १२ परिच्छेद</div></div>
+    </div>
+    <div class="divbar"></div>
+    <div class="tabs">
+      <button class="tb on" onclick="ot(event,'t1')">अन्तरसरकारी</button>
+      <button class="tb" onclick="ot(event,'t2')">अर्थ तथा उद्योग</button>
+      <button class="tb" onclick="ot(event,'t3')">वित्त व्यवस्थापन</button>
+      <button class="tb" onclick="ot(event,'t4')">पूर्वाधार</button>
+      <button class="tb" onclick="ot(event,'t5')">सामाजिक क्षेत्र</button>
+      <button class="tb" onclick="ot(event,'t6')">सुरक्षा तथा न्याय</button>
+    </div>
+
+    <div id="t1" class="tc on">
+      <div class="scards">
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#C62828,#E53935)"><h3>परिच्छेद २(क) — अन्तरसरकारी समन्वय</h3><p>सङ्घ, प्रदेश र स्थानीय तहबीच</p></div><div class="sc-body"><ul class="sc-list"><li>संघीय इकाइबीच अधिकार क्षेत्र स्पष्टता</li><li>अन्तरसरकारी वित्तीय हस्तान्तरण सुधार</li><li>समन्वय संयन्त्र बलियो बनाउने</li><li>दोहोरो बजेट विनियोजन हटाउने</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#B71C1C,#C62828)"><h3>परिच्छेद २(ख) — प्रदेश सरकार</h3><p>७ प्रदेशको सुशासन सुधार</p></div><div class="sc-body"><ul class="sc-list"><li>प्रदेश निजामती सेवा सुधार</li><li>प्रदेश बजेट प्रणाली व्यवस्थित</li><li>स्थानीय तहसँग समन्वय</li><li>असल अभ्यास प्रसार</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#D32F2F,#E53935)"><h3>परिच्छेद २(ग) — स्थानीय सरकार</h3><p>७५३ स्थानीय तहको सुधार</p></div><div class="sc-body"><ul class="sc-list"><li>नागरिकमैत्री सेवा प्रवाह</li><li>डिजिटल सेवा विस्तार</li><li>राजस्व परिचालन सुधार</li><li>सामुदायिक सहभागिता</li></ul></div></div>
+      </div>
+    </div>
+
+    <div id="t2" class="tc">
+      <div class="scards">
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#F57F17,#F9A825)"><h3>परिच्छेद ३(क) — अर्थ मन्त्रालय</h3><p>राजस्व, बजेट र वित्तीय अनुशासन</p></div><div class="sc-body"><ul class="sc-list"><li>कर प्रणाली सरलीकरण र डिजिटलाइजेशन</li><li>करदातामैत्री सेवा विकास</li><li>राजस्व चुहावट नियन्त्रण</li><li>भन्सार प्रशासन आधुनिकीकरण</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#E65100,#F57F17)"><h3>परिच्छेद ३(ख) — उद्योग तथा वाणिज्य</h3><p>व्यापार सहजीकरण र लगानी</p></div><div class="sc-body"><ul class="sc-list"><li>व्यापार दर्ता प्रक्रिया सरल</li><li>एकल बिन्दु सेवा केन्द्र</li><li>विदेशी लगानी आकर्षण</li><li>निजी क्षेत्र–सरकार सहकार्य</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#1565C0,#1976D2)"><h3>परिच्छेद ३(ग) — पर्यटन तथा उड्डयन</h3><p>पर्यटन प्रवर्द्धन र उड्डयन सुधार</p></div><div class="sc-body"><ul class="sc-list"><li>उच्चमूल्य पर्यटन विकास</li><li>सामुदायिक पर्यटन होमस्टे</li><li>विमानस्थल पूर्वाधार सुधार</li><li>अन्तर्राष्ट्रिय ब्रान्डिङ</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#2E7D32,#43A047)"><h3>परिच्छेद ३(घ) — सहकारी</h3><p>सहकारी क्षेत्र संकट समाधान</p></div><div class="sc-body"><ul class="sc-list"><li>रु.५ लाखसम्म बचत तत्काल फिर्ता</li><li>सहकारी नियमन प्राधिकरण स्थापना</li><li>COPOMIS डिजिटल प्रणाली अनिवार्य</li><li>दोषी सञ्चालक सम्पत्ति जफत</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#4A148C,#6A1B9A)"><h3>परिच्छेद ३(ड) — सार्वजनिक संस्थान</h3><p>संस्थान कार्यसम्पादन सुधार</p></div><div class="sc-body"><ul class="sc-list"><li>राजनीतिक हस्तक्षेप अन्त्य</li><li>योग्यतामा आधारित नेतृत्व</li><li>कार्यसम्पादन सम्झौता</li><li>घाटा संस्थान पुनर्संरचना</li></ul></div></div>
+      </div>
+    </div>
+
+    <div id="t3" class="tc">
+      <div class="scards">
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#1A237E,#283593)"><h3>परिच्छेद ४(क) — सार्वजनिक वित्त</h3><p>PFM — योजना देखि लेखापरीक्षण</p></div><div class="sc-body"><ul class="sc-list"><li>CGAS, TSA, LMBIS, SuTRA एकीकरण</li><li>Real-time वित्तीय निगरानी</li><li>बेरुजु व्यवस्थापन सुधार</li><li>Value for Money लेखापरीक्षण</li><li>आयोजना छनोटमा लागत–लाभ विश्लेषण</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#880E4F,#AD1457)"><h3>सार्वजनिक खरिद सुधार</h3><p>e-GP विस्तार र पारदर्शिता</p></div><div class="sc-body"><ul class="sc-list"><li>e-GP End-to-end प्रणाली</li><li>Value for Money अवधारणा</li><li>Life Cycle Costing अनिवार्य</li><li>ब्रान्ड-न्युट्रल स्पेसिफिकेशन</li><li>खरिद विशेषज्ञ जनशक्ति विकास</li></ul></div></div>
+      </div>
+      <div class="hb hb-r" style="margin-top:14px">
+        <div class="ht">⚠️ प्रमुख वित्तीय समस्याहरू</div>
+        <ul>
+          <li>आर्थिक वर्षको अन्त्यमा खर्च bunching — बजेट अनुशासन कमजोर</li>
+          <li>लोकप्रियता केन्द्रित वितरणमुखी बजेट प्रवृत्ति</li>
+          <li>पुँजीगत खर्चको न्यून कार्यान्वयन</li>
+          <li>आयोजना लागत वृद्धि र "निर्माण–उपेक्षा–पुनर्निर्माण" चक्र</li>
+          <li>मिलेमतो (Collusion) र ब्रान्ड-विशिष्ट स्पेसिफिकेसन समस्या</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="t4" class="tc">
+      <div class="scards">
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#37474F,#455A64)"><h3>परिच्छेद ४(ख) — भौतिक पूर्वाधार</h3><p>सडक, पुल, यातायात, शहरी विकास</p></div><div class="sc-body"><ul class="sc-list"><li>राष्ट्रिय पूर्वाधार गुरुयोजना</li><li>काठमाडौं यातायात पुनर्संरचना</li><li>डिजिटल आयोजना बैंक</li><li>१४६ क्षतिग्रस्त भवन पुनर्निर्माण</li><li>O&M Fund स्थापना (बजेटको ५%)</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#006064,#00838F)"><h3>परिच्छेद ४(ग) — खानेपानी</h3><p>पिउने पानी र सरसफाई</p></div><div class="sc-body"><ul class="sc-list"><li>सार्वभौम खानेपानी पहुँच</li><li>खानेपानी प्राधिकरण सुधार</li><li>ढल व्यवस्थापन आधुनिकीकरण</li><li>स्थानीय तहसँग समन्वय</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#E65100,#BF360C)"><h3>परिच्छेद ४(घ) — ऊर्जा र जलविद्युत</h3><p>विद्युत उत्पादन र वितरण</p></div><div class="sc-body"><ul class="sc-list"><li>ऊर्जा सुरक्षा — लोडसेडिङ अन्त्य</li><li>नवीकरणीय ऊर्जा प्रवर्द्धन</li><li>विद्युत व्यापार नीति</li><li>सिँचाइ पूर्वाधार विस्तार</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#1565C0,#0D47A1)"><h3>परिच्छेद ४(ड) — सञ्चार IT</h3><p>डिजिटल नेपाल र ई-गभर्नेन्स</p></div><div class="sc-body"><ul class="sc-list"><li>ब्रॉडब्यान्ड — सबै पालिकामा</li><li>डिजिटल साक्षरता कार्यक्रम</li><li>साइबर सुरक्षा नीति</li><li>e-Government services एकीकरण</li></ul></div></div>
+      </div>
+      <div class="hb hb-y" style="margin-top:14px">
+        <div class="ht">🏙️ शहरी विकास विशेष प्रावधान</div>
+        <ul>
+          <li>Land Pooling र GLD मार्फत व्यवस्थित शहरीकरण</li>
+          <li>प्रत्येक वडामा कम्तीमा १ हरित उद्यान अनिवार्य</li>
+          <li>विपद्को बेला १० मिनेटको दूरीमा खुल्ला क्षेत्र अनिवार्य</li>
+          <li>स्मार्ट ट्राफिक लाइट र सडक फर्निचर विस्तार — ७०% चोक</li>
+          <li>सडक खाल्डो एपमार्फत रिपोर्ट — २४ घण्टाभित्र मर्मत</li>
+          <li>५० वर्षको जनसंख्या ध्यानमा राखी सडक र ढल डिजाइन</li>
+          <li>भूकम्प प्रतिरोधी संरचना मापदण्ड अनिवार्य</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="t5" class="tc">
+      <div class="scards">
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#2E7D32,#388E3C)"><h3>परिच्छेद ६(क) — शिक्षा</h3><p>गुणस्तरीय शिक्षा र विज्ञान</p></div><div class="sc-body"><ul class="sc-list"><li>शिक्षक व्यावसायिकता र जवाफदेहिता</li><li>पाठ्यक्रम आधुनिकीकरण</li><li>ICT शिक्षा विस्तार</li><li>विश्वविद्यालय स्वायत्तता</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#C62828,#D32F2F)"><h3>परिच्छेद ६(ख) — स्वास्थ्य</h3><p>सार्वभौम स्वास्थ्य सेवा</p></div><div class="sc-body"><ul class="sc-list"><li>अस्पताल सेवा मानकीकरण</li><li>स्वास्थ्य बीमा विस्तार</li><li>टेलिमेडिसिन सेवा</li><li>औषधि आपूर्ति सुधार</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#1565C0,#1976D2)"><h3>परिच्छेद ७(क) — कृषि</h3><p>कृषि आधुनिकीकरण</p></div><div class="sc-body"><ul class="sc-list"><li>कृषि अनुदान व्यवस्थापन सुधार</li><li>सहकारीमार्फत बजार पहुँच</li><li>कृषि बीमा विस्तार</li><li>जैविक कृषि प्रवर्द्धन</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#4A148C,#6A1B9A)"><h3>परिच्छेद ९(क)(ख) — सामाजिक सुरक्षा</h3><p>सामाजिक समावेश</p></div><div class="sc-body"><ul class="sc-list"><li>सामाजिक सुरक्षा भत्ता सुधार</li><li>महिला सशक्तीकरण</li><li>बालबालिका संरक्षण</li><li>ज्येष्ठ नागरिक सेवा</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#BF360C,#D84315)"><h3>परिच्छेद ८ — भूमि प्रशासन</h3><p>भूमि व्यवस्था र जग्गा प्रशासन</p></div><div class="sc-body"><ul class="sc-list"><li>भूमि बैंक कार्यान्वयन</li><li>जग्गा दर्ता डिजिटलाइजेशन</li><li>भूउपयोग योजना</li><li>मालपोत प्रशासन सुधार</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#00695C,#00897B)"><h3>परिच्छेद ७(ख) — वन तथा वातावरण</h3><p>वन संरक्षण र जलवायु</p></div><div class="sc-body"><ul class="sc-list"><li>सामुदायिक वन व्यवस्थापन</li><li>जलवायु परिवर्तन अनुकूलन</li><li>वन विनाश रोक्ने कडा कानून</li><li>REDD+ कार्यक्रम</li></ul></div></div>
+      </div>
+    </div>
+
+    <div id="t6" class="tc">
+      <div class="scards">
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#263238,#37474F)"><h3>परिच्छेद १२(क) — आन्तरिक सुरक्षा</h3><p>नेपाल प्रहरी, सशस्त्र प्रहरी, NID</p></div><div class="sc-body"><ul class="sc-list"><li>प्रहरी व्यावसायिकता सुधार</li><li>समुदायमा आधारित प्रहरी</li><li>अपराध अनुसन्धान क्षमता</li><li>सुरक्षा निकायमा मानव अधिकार</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#1A237E,#283593)"><h3>परिच्छेद ११(क) — भ्रष्टाचार नियन्त्रण</h3><p>CIAA र भ्रष्टाचार विरुद्ध</p></div><div class="sc-body"><ul class="sc-list"><li>सम्पत्ति विवरण सार्वजनिक</li><li>व्हिसलब्लोअर संरक्षण</li><li>भ्रष्टाचार मुद्दा छिटो फैसला</li><li>अन्तर्राष्ट्रिय सहकार्य</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#880E4F,#AD1457)"><h3>परिच्छेद ११(ख) — गुनासो सुनुवाई</h3><p>नागरिक गुनासो व्यवस्थापन</p></div><div class="sc-body"><ul class="sc-list"><li>एकल बिन्दु गुनासो केन्द्र</li><li>अनलाइन गुनासो प्रणाली</li><li>SLA — समयमै समाधान</li><li>गुनासोकर्ता संरक्षण</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#4E342E,#6D4C41)"><h3>परिच्छेद १२(ख) — कारागार</h3><p>कारागार सुधार र पुनर्स्थापना</p></div><div class="sc-body"><ul class="sc-list"><li>कारागार अधिकार संरक्षण</li><li>पुनर्स्थापना कार्यक्रम</li><li>भीडभाड व्यवस्थापन</li><li>स्वास्थ्य र शिक्षा सुविधा</li></ul></div></div>
+        <div class="sc"><div class="sc-top" style="background:linear-gradient(135deg,#0D47A1,#1565C0)"><h3>परिच्छेद १०(क) — नागरिक सेवा</h3><p>रोजगार, नागरिकता, राहदानी</p></div><div class="sc-body"><ul class="sc-list"><li>एकल बिन्दु नागरिक सेवा</li><li>ई-नागरिकता प्रणाली</li><li>राहदानी प्रक्रिया छिटो</li><li>सवारी अनुमति डिजिटल</li></ul></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="sec sec-bg" id="problems">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#FFF3F3">🔍</div>
+      <div><div class="st">मुख्य समस्याहरू र समाधान</div><div class="ss">Core Problems & Solutions</div></div>
+    </div>
+    <div class="divbar"></div>
+
+    <div class="info-row">
+      <div class="info-c"><div class="ic-ring" style="border-color:#C62828;color:#C62828"><div class="ic-n">भ्र</div><div class="ic-u">नम्बर १</div></div><div class="ic-l">भ्रष्टाचार</div></div>
+      <div class="info-c"><div class="ic-ring" style="border-color:#E65100;color:#E65100"><div class="ic-n">ढि</div><div class="ic-u">समस्या</div></div><div class="ic-l">ढिलासुस्ती</div></div>
+      <div class="info-c"><div class="ic-ring" style="border-color:#F9A825;color:#F9A825"><div class="ic-n">अ</div><div class="ic-u">चुनौती</div></div><div class="ic-l">अपारदर्शिता</div></div>
+      <div class="info-c"><div class="ic-ring" style="border-color:#1565C0;color:#1565C0"><div class="ic-n">IT</div><div class="ic-u">कमी</div></div><div class="ic-l">डिजिटल अभाव</div></div>
+      <div class="info-c"><div class="ic-ring" style="border-color:#4A148C;color:#4A148C"><div class="ic-n">स</div><div class="ic-u">कमी</div></div><div class="ic-l">समन्वयहीनता</div></div>
+      <div class="info-c"><div class="ic-ring" style="border-color:#2E7D32;color:#2E7D32"><div class="ic-n">क्ष</div><div class="ic-u">कमी</div></div><div class="ic-l">क्षमता अभाव</div></div>
+    </div>
+
+    <div class="ps">
+      <div class="ps-box ps-p">
+        <div class="ht" style="color:#C62828">🔴 वित्तीय समस्याहरू</div>
+        <ul>
+          <li>वित्तीय अनुशासन कमजोर — बेरुजु वृद्धि</li>
+          <li>आयोजना ढिलाइ र लागत वृद्धि</li>
+          <li>राजनीतिक हस्तक्षेप</li>
+          <li>खरिद प्रक्रियामा मिलेमतो</li>
+          <li>सहकारीमा बचत अपचलन</li>
+        </ul>
+      </div>
+      <div class="ps-arr">→</div>
+      <div class="ps-box ps-s">
+        <div class="ht" style="color:#2E7D32">🟢 समाधान</div>
+        <ul>
+          <li>जोखिममा आधारित लेखापरीक्षण</li>
+          <li>डिजिटल आयोजना बैंक र MIS</li>
+          <li>योग्यतामा आधारित नियुक्ति</li>
+          <li>e-GP End-to-end प्रणाली</li>
+          <li>सहकारी नियमन प्राधिकरण</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ps">
+      <div class="ps-box ps-p">
+        <div class="ht" style="color:#C62828">🔴 पूर्वाधार समस्या</div>
+        <ul>
+          <li>आयोजना प्रमुखको बारम्बार सरुवा</li>
+          <li>तहबीच दोहोरो आयोजना</li>
+          <li>सडक खाल्डो र मर्मत अभाव</li>
+          <li>O&M कोषको अभाव</li>
+        </ul>
+      </div>
+      <div class="ps-arr">→</div>
+      <div class="ps-box ps-s">
+        <div class="ht" style="color:#2E7D32">🟢 पूर्वाधार समाधान</div>
+        <ul>
+          <li>स्पष्ट कार्यकाल र सरुवा नीति</li>
+          <li>तहगत जिम्मेवारी स्पष्टीकरण</li>
+          <li>खाल्डो एप र २४ घण्टा मर्मत</li>
+          <li>O&M Fund — बजेटको ५%</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ps">
+      <div class="ps-box ps-p">
+        <div class="ht" style="color:#C62828">🔴 जनशक्ति समस्या</div>
+        <ul>
+          <li>हाण्डओभर नोट बिना सरुवा</li>
+          <li>कार्यविवरण नभएका कर्मचारी</li>
+          <li>क्षमता विकास तालिम अभाव</li>
+          <li>पुरस्कार–दण्ड प्रणाली कमजोर</li>
+        </ul>
+      </div>
+      <div class="ps-arr">→</div>
+      <div class="ps-box ps-s">
+        <div class="ht" style="color:#2E7D32">🟢 HR समाधान</div>
+        <ul>
+          <li>हाण्डओभर नोट अनिवार्य — तत्काल</li>
+          <li>३ महिनाभित्र सबैलाई कार्यविवरण</li>
+          <li>७५% कर्मचारी २ वर्षभित्र तालिम</li>
+          <li>Integrity आधारमा पुरस्कार</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFORMS -->
+<section class="sec" id="reforms">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#E0F2F1">⚙️</div>
+      <div><div class="st">मुख्य सुधारका उपायहरू</div><div class="ss">Key Reform Measures</div></div>
+    </div>
+    <div class="divbar"></div>
+
+    <div class="acc" onclick="ta(this)">
+      <div class="acc-h"><span>🏛️ संस्थागत सुधार — Institutional Reforms</span><span class="arr">▼</span></div>
+      <div class="acc-b">
+        <div class="hb hb-b"><div class="ht">प्रमुख उपायहरू</div><ul>
+          <li>सार्वजनिक संस्थानमा <strong>योग्यता र प्रतिस्पर्धामा आधारित नेतृत्व नियुक्ति</strong></li>
+          <li>सहकारी विभाग खारेज — <strong>स्वायत्त सहकारी नियमन प्राधिकरण</strong> स्थापना</li>
+          <li>नगर विकास कोषलाई <strong>निगममा रूपान्तरण</strong> (३ वर्षभित्र)</li>
+          <li>मन्त्रालय र मातहत निकायबीच <strong>स्पष्ट कार्यक्षेत्र</strong></li>
+          <li>दरबन्दी विश्लेषण — <strong>टिक संगठन आकार</strong> — दोहोरोपना ५०% घटाउने</li>
+          <li>सम्पत्ति व्यवस्थापन कम्पनी (AMC) मोडलमा स्थायी संरचना</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="acc" onclick="ta(this)">
+      <div class="acc-h"><span>💻 डिजिटल सुशासन — Digital Governance</span><span class="arr">▼</span></div>
+      <div class="acc-b">
+        <div class="hb hb-g"><div class="ht">डिजिटल सुधार उपायहरू</div><ul>
+          <li>GIOMS मार्फत <strong>कागजरहित पत्राचार</strong> — ९०% लक्ष्य, १ वर्षभित्र</li>
+          <li>भवन नक्साास पास — <strong>पूर्ण अनलाइन</strong> (१८ महिनाभित्र)</li>
+          <li>COPOMIS सहकारीमा <strong>अनिवार्य</strong> — AML/CFT प्रणाली</li>
+          <li>RuTIMS ग्रामीण सडक ट्र्याकिङ अद्यावधिक</li>
+          <li>एकीकृत सेवा पोर्टल — ८५% सेवा अनलाइन</li>
+          <li>साइबर सुरक्षा प्रोटोकल र राष्ट्रिय नीति</li>
+          <li>डिजिटल पेमेन्ट गेटवे — राजस्व चुहावट २५% घटाउने</li>
+          <li>PAMS (Property Asset Management System) लागू</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="acc" onclick="ta(this)">
+      <div class="acc-h"><span>👥 जनशक्ति व्यवस्थापन — Human Resource Management</span><span class="arr">▼</span></div>
+      <div class="acc-b">
+        <div class="hb hb-y"><div class="ht">HR सुधार</div><ul>
+          <li><strong>हाण्डओभर नोट बिना रमाना नदिने</strong> — तत्काल लागू, निरन्तर</li>
+          <li>कार्यविवरण <strong>३ महिनाभित्र</strong> — १००% कर्मचारी</li>
+          <li>Integrity, Digital Governance, Service Standard आधारमा <strong>पुरस्कार संयन्त्र</strong></li>
+          <li>KPI निर्धारण र वैमासिक समीक्षा — SMART मापदण्ड</li>
+          <li>७५% कर्मचारी तालिमप्राप्त — <strong>२ वर्षभित्र</strong></li>
+          <li>दरबन्दी आवश्यकता विश्लेषण — <strong>१ वर्षभित्र</strong></li>
+          <li>जटिल पूर्वाधारका लागि <strong>५० विशेषज्ञ इन्जिनियर</strong> तालिम</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="acc" onclick="ta(this)">
+      <div class="acc-h"><span>⚖️ कानूनी सुधार — Legal Reforms</span><span class="arr">▼</span></div>
+      <div class="acc-b">
+        <div class="hb hb-r"><div class="ht">आवश्यक कानूनी परिवर्तन</div><ul>
+          <li>एकीकृत शहरी विकास ऐन — <strong>२ वर्षभित्र पारित</strong></li>
+          <li>सार्वजनिक खरिद ऐन संशोधन — Value for Money समावेश</li>
+          <li>सहकारी ऐन र नियमावली अद्यावधिक — "एक व्यक्ति, एक सहकारी"</li>
+          <li>ग्रामीण पूर्वाधार विकास राष्ट्रिय नीति — <strong>१ वर्षभित्र</strong></li>
+          <li>झोलुङ्गे पुल राष्ट्रिय नीति — <strong>१ वर्षभित्र</strong></li>
+          <li>भूकम्प प्रतिरोधी संरचना मापदण्ड — <strong>२ वर्षभित्र</strong></li>
+          <li>सार्वजनिक यातायात प्राधिकरण कानूनी व्यवस्था</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="acc" onclick="ta(this)">
+      <div class="acc-h"><span>💰 वित्तीय सुशासन — Financial Governance</span><span class="arr">▼</span></div>
+      <div class="acc-b">
+        <div class="hb hb-b"><div class="ht">वित्तीय सुधारका मुख्य बुँदाहरू</div><ul>
+          <li>सहकारीमा रु.५ लाखसम्म बचत — <strong>तत्काल प्राथमिकता फिर्ता</strong></li>
+          <li>दोषी सञ्चालकको <strong>राहदानी रोका, सम्पत्ति जफत</strong></li>
+          <li>"सहकारी ऋणपत्र" जारी — तरलता व्यवस्थापन</li>
+          <li>बजेटको कम्तीमा <strong>५% O&M</strong> मा अनिवार्य विनियोजन</li>
+          <li>PEARLS अन्तर्राष्ट्रिय मापदण्ड अनिवार्य</li>
+          <li>कर आधार विस्तार र <strong>कर छुट पुनरावलोकन</strong></li>
+          <li>गैरबजेटरी कोषको <strong>प्रभावकारी नियमन</strong></li>
+          <li>आवधिक योजना–MTEF–वार्षिक बजेट तालमेल</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <div class="acc" onclick="ta(this)">
+      <div class="acc-h"><span>🌍 भ्रष्टाचार नियन्त्रण — Anti-Corruption</span><span class="arr">▼</span></div>
+      <div class="acc-b">
+        <div class="hb hb-r"><div class="ht">भ्रष्टाचार विरोधी उपायहरू</div><ul>
+          <li>सम्पत्ति विवरण अनिवार्य र सार्वजनिक</li>
+          <li>व्हिसलब्लोअर (सूचना दिनेको) संरक्षण कानून</li>
+          <li>भ्रष्टाचार मुद्दा — छिटो फैसला प्रणाली</li>
+          <li>CIAA लाई थप अधिकार र स्वायत्तता</li>
+          <li>अन्तर्राष्ट्रिय सहकार्य — UNCAC कार्यान्वयन</li>
+          <li>भ्रष्टाचार पहिचानका लागि AI/डाटा विश्लेषण</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTORS -->
+<section class="sec sec-bg" id="sectors">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#FFF8E1">🗺️</div>
+      <div><div class="st">क्षेत्रगत विशेष प्रावधान</div><div class="ss">Sector-specific Highlights</div></div>
+    </div>
+    <div class="divbar"></div>
+
+    <div class="col2">
+      <div>
+        <div class="hb hb-r">
+          <div class="ht">🏦 सहकारी संकट — विस्तृत समाधान</div>
+          <ul>
+            <li>समस्याग्रस्त सहकारीमा रु.५ लाखसम्म साना बचतकर्तालाई प्राथमिकता</li>
+            <li>बचत तथा कर्जा सुरक्षण कोष पूर्ण सक्रिय</li>
+            <li>"सहकारी ऋणपत्र" जारी गरी तरलता व्यवस्थापन</li>
+            <li>दोषी सञ्चालकको राहदानी रोका, बैंक खाता फ्रिज, सम्पत्ति लिलाम</li>
+            <li>"एक व्यक्ति, एक सहकारी" नीति अनिवार्य</li>
+            <li>PEARLS मापदण्ड — वैमासिक वित्तीय श्रेतपत्र सार्वजनिक</li>
+            <li>साना सहकारी → स्थानीय, मध्यम → प्रदेश, ठूला → सङ्घबाट नियमन</li>
+            <li>AMC (Asset Management Company) मोडल</li>
+          </ul>
+        </div>
+        <div class="hb hb-y">
+          <div class="ht">✈️ पर्यटन तथा नागरिक उड्डयन</div>
+          <ul>
+            <li>उच्चमूल्य पर्यटक आकर्षण — per-tourist revenue बढाउने</li>
+            <li>Community-based tourism, Wellness tourism, Eco-tourism</li>
+            <li>डिजिटल मार्केटिङ र एकीकृत Nepal ब्रान्ड</li>
+            <li>ICAO मापदण्ड अनुसार उड्डयन सुरक्षा</li>
+            <li>विमानस्थल पूर्वाधार सुधार</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="hb hb-g">
+          <div class="ht">🏙️ शहरी विकास — Smart City</div>
+          <ul>
+            <li>शहरी तथ्याङ्क बैंक स्थापना</li>
+            <li>Bankable आयोजना तथ्यमा आधारित छनोट</li>
+            <li>PPP मोडेल — ४ वर्षभित्र कम्तीमा ३ ठूला आयोजना</li>
+            <li>समान पहुँचयुक्त सार्वजनिक यातायात — ५ वर्षभित्र ८०%</li>
+            <li>हरित यातायात — ५ वर्षभित्र ५०% करिडोरमा</li>
+            <li>गुटी तथा सार्वजनिक जग्गा एकीकरण समस्या समाधान</li>
+            <li>सभाहल, प्रदर्शनी केन्द्र — PPP/लीज मोडेलमा सञ्चालन</li>
+          </ul>
+        </div>
+        <div class="hb hb-b">
+          <div class="ht">💪 सार्वजनिक संस्थान सुधार</div>
+          <ul>
+            <li>सञ्चालक समितिलाई स्वायत्तता + नेतृत्वसँग सम्झौता</li>
+            <li>आन्तरिक नियन्त्रण र लेखापरीक्षण प्रभावकारी</li>
+            <li>कार्यसम्पादन आधारित दण्ड–पुरस्कार</li>
+            <li>निरन्तर घाटा संस्थान — मर्जर/निजीकरण</li>
+            <li>सार्वजनिक–निजी साझेदारी (PPP) विस्तार</li>
+            <li>डिजिटल प्रणाली र स्वचालन अपनाउने</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-box">
+      <div class="ch-t">📊 क्षेत्रगत सुधार कार्यहरूको तुलना</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px;font-size:11px;color:#666">
+        <span style="display:flex;align-items:center;gap:4px"><span style="width:10px;height:10px;border-radius:2px;background:#C62828;display:inline-block"></span>सुधार कार्यसंख्या</span>
+      </div>
+      <div style="position:relative;width:100%;height:300px">
+        <canvas id="sc1" role="img" aria-label="Bar chart of reform actions by sector">क्षेत्रगत सुधार कार्यहरू</canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="sec" id="timeline">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#E3F2FD">⏱️</div>
+      <div><div class="st">कार्यान्वयन समयरेखा</div><div class="ss">Implementation Timeline</div></div>
+    </div>
+    <div class="divbar"></div>
+    <div class="col2">
+      <div class="tl">
+        <div class="tli"><span class="tag ti">तत्काल</span><div class="tl-t">हाण्डओभर नोट अनिवार्य</div><div class="tl-d">सरुवा कर्मचारीबाट औपचारिक हाण्डओभर बिना रमाना नदिने।</div></div>
+        <div class="tli"><span class="tag ti">तत्काल</span><div class="tl-t">सहकारी बचत फिर्ता</div><div class="tl-d">रु.५ लाखसम्म साना बचतकर्तालाई तत्काल भुक्तानी।</div></div>
+        <div class="tli"><span class="tag ty">३ महिना</span><div class="tl-t">कार्यविवरण लागू</div><div class="tl-d">१००% कर्मचारीको कार्यविवरण स्वीकृत र कार्यान्वयन।</div></div>
+        <div class="tli"><span class="tag tg">१ वर्ष</span><div class="tl-t">सडक खाल्डो एप</div><div class="tl-d">एप सञ्चालन — ७०% खाल्डा २४ घण्टाभित्र मर्मत।</div></div>
+        <div class="tli"><span class="tag tg">१ वर्ष</span><div class="tl-t">GIOMS ९०% कार्यान्वयन</div><div class="tl-d">सबै आन्तरिक/बाह्य पत्राचार डिजिटल।</div></div>
+        <div class="tli"><span class="tag tg">१ वर्ष</span><div class="tl-t">O&M Fund स्थापना</div><div class="tl-d">बजेटको ५% मर्मत कोष — कानूनी वाध्यता सहित।</div></div>
+        <div class="tli"><span class="tag tg">१ वर्ष</span><div class="tl-t">ग्रामीण पूर्वाधार नीति</div><div class="tl-d">राष्ट्रिय नीति स्वीकृत, कार्यान्वयन निर्देशिका जारी।</div></div>
+        <div class="tli"><span class="tag tg">१ वर्ष</span><div class="tl-t">सम्पत्ति डिजिटल अभिलेख</div><div class="tl-d">१००% सार्वजनिक सम्पत्ति डिजिटल इन्वेन्ट्रीमा दर्ता।</div></div>
+      </div>
+      <div class="tl">
+        <div class="tli"><span class="tag tb2">१–२ वर्ष</span><div class="tl-t">नक्साास पास पूर्ण अनलाइन</div><div class="tl-d">१८ महिनाभित्र १००% अनलाइन, स्वीकृति समय ३०% घटाउने।</div></div>
+        <div class="tli"><span class="tag tb2">२ वर्ष</span><div class="tl-t">एकीकृत शहरी विकास ऐन</div><div class="tl-d">पारित र कार्यान्वयन।</div></div>
+        <div class="tli"><span class="tag tb2">२ वर्ष</span><div class="tl-t">७५% कर्मचारी तालिम</div><div class="tl-d">सबै प्रमुख कार्यक्रमका KPI + वैमासिक समीक्षा।</div></div>
+        <div class="tli"><span class="tag tb2">२ वर्ष</span><div class="tl-t">भवन पुनर्निर्माण</div><div class="tl-d">१४६ क्षतिग्रस्त भवन — ७०% पुनर्निर्माण प्रारम्भ।</div></div>
+        <div class="tli"><span class="tag tb2">२ वर्ष</span><div class="tl-t">भूकम्प प्रतिरोधी मापदण्ड</div><div class="tl-d">Resilient Infrastructure कोड स्वीकृत र अनिवार्य।</div></div>
+        <div class="tli"><span class="tag ti" style="background:#F3E5F5;color:#4A148C">३ वर्ष</span><div class="tl-t">नगर विकास निगम</div><div class="tl-d">नगर विकास कोष → निगम रूपान्तरण सम्पन्न।</div></div>
+        <div class="tli"><span class="tag ti" style="background:#F3E5F5;color:#4A148C">३–५ वर्ष</span><div class="tl-t">Land Pooling आयोजना</div><div class="tl-d">कम्तीमा ५ ठूला Land Pooling/GLD आयोजना सञ्चालन।</div></div>
+        <div class="tli"><span class="tag ti" style="background:#E0F2F1;color:#00695C">निरन्तर</span><div class="tl-t">हरित उद्यान — ९०% वडा</div><div class="tl-d">३ वर्षभित्र ९०% वडामा कम्तीमा १ हरित उद्यान।</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KPI -->
+<section class="sec sec-bg" id="kpi">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#E8F5E9">📊</div>
+      <div><div class="st">मुख्य कार्यसम्पादन सूचकहरू</div><div class="ss">Key Performance Indicators (KPI)</div></div>
+    </div>
+    <div class="divbar"></div>
+
+    <div class="chart-box">
+      <div class="ch-t">KPI लक्ष्यहरू — प्रतिशतमा</div>
+      <div style="position:relative;width:100%;height:400px">
+        <canvas id="kc" role="img" aria-label="Horizontal bar chart of KPI percentage targets">KPI लक्ष्य प्रतिशत</canvas>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:20px">
+      <div class="card">
+        <span class="ci">📁</span>
+        <div class="ct">डिजिटल सेवा KPI</div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">GIOMS पत्राचार</span><span class="kpi-v">लक्ष्य: ९०%</span></div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">अनलाइन सेवा</span><span class="kpi-v">लक्ष्य: ८५%</span></div><div class="bar"><div class="bar-fill" style="width:85%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">प्राविधिक दस्तावेज</span><span class="kpi-v">लक्ष्य: ८०%</span></div><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+      </div>
+      <div class="card">
+        <span class="ci">🏗️</span>
+        <div class="ct">पूर्वाधार KPI</div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">खाल्डो २४ घण्टामा मर्मत</span><span class="kpi-v">लक्ष्य: ७०%</span></div><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">स्मार्ट ट्राफिक लाइट</span><span class="kpi-v">लक्ष्य: ७०% चोक</span></div><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">भवन पुनर्निर्माण सुरु</span><span class="kpi-v">लक्ष्य: ७०%</span></div><div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+      </div>
+      <div class="card">
+        <span class="ci">👨‍💼</span>
+        <div class="ct">जनशक्ति KPI</div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">तालिमप्राप्त कर्मचारी</span><span class="kpi-v">लक्ष्य: ७५%</span></div><div class="bar"><div class="bar-fill" style="width:75%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">कार्यविवरण लागू</span><span class="kpi-v">लक्ष्य: १००%</span></div><div class="bar"><div class="bar-fill" style="width:100%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">दरबन्दी दोहोरोपना घटाउने</span><span class="kpi-v">लक्ष्य: ५०%</span></div><div class="bar"><div class="bar-fill" style="width:50%"></div></div></div>
+      </div>
+      <div class="card">
+        <span class="ci">🌿</span>
+        <div class="ct">शहरी विकास KPI</div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">वडामा हरित उद्यान</span><span class="kpi-v">लक्ष्य: ९०%</span></div><div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">वैज्ञानिक फोहोर व्यवस्था</span><span class="kpi-v">लक्ष्य: ८०%</span></div><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+        <div class="kpi-item"><div class="kpi-h"><span class="kpi-l">सार्वजनिक यातायात पहुँच</span><span class="kpi-v">लक्ष्य: ८०%</span></div><div class="bar"><div class="bar-fill" style="width:80%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMITTEE -->
+<section class="sec" id="committee">
+  <div class="wrap">
+    <div class="sh">
+      <div class="si" style="background:#FFF8E1">👥</div>
+      <div><div class="st">समिति संरचना</div><div class="ss">Committee — १५ सदस्यीय (१३ सक्रिय)</div></div>
+    </div>
+    <div class="divbar"></div>
+    <div class="comm-grid">
+      <div class="mc"><div class="ma">गो</div><div class="mn">गोविन्द बहादुर कार्की</div><div class="mr">संयोजक/सचिव — प्रम.म.प.को का.</div></div>
+      <div class="mc"><div class="ma">टं</div><div class="mn">टंक प्रसाद पाण्डेय</div><div class="mr">सदस्य/सहसचिव — अर्थ</div></div>
+      <div class="mc"><div class="ma">सु</div><div class="mn">सुरेश पन्थी</div><div class="mr">सदस्य/सहसचिव — गृह</div></div>
+      <div class="mc"><div class="ma">एक</div><div class="mn">एकदेव अधिकारी</div><div class="mr">सदस्य/सहसचिव — संघीय मामिला</div></div>
+      <div class="mc"><div class="ma">कृ</div><div class="mn">कृष्णराज पन्त</div><div class="mr">सदस्य/सहसचिव — भौतिक पूर्वाधार</div></div>
+      <div class="mc"><div class="ma">रि</div><div class="mn">गोविन्द रिजाल</div><div class="mr">सदस्य/सहसचिव — भूमि व्यवस्था</div></div>
+      <div class="mc"><div class="ma">शि</div><div class="mn">सुवास शिवाकोटी</div><div class="mr">सदस्य/सहसचिव — सञ्चार IT</div></div>
+      <div class="mc"><div class="ma">ना</div><div class="mn">नारायण भट्ट</div><div class="mr">सदस्य/सहसचिव — राष्ट्रिय सतर्कता</div></div>
+      <div class="mc"><div class="ma" style="background:linear-gradient(135deg,#C62828,#E91E63)">मो</div><div class="mn">मोनिका निरौला</div><div class="mr">सदस्य — जेनजी प्रतिनिधि ✦</div></div>
+      <div class="mc"><div class="ma" style="background:linear-gradient(135deg,#1565C0,#0288D1)">सां</div><div class="mn">सान्केन राई</div><div class="mr">सदस्य — जेनजी प्रतिनिधि ✦</div></div>
+      <div class="mc"><div class="ma" style="background:linear-gradient(135deg,#2E7D32,#43A047)">अं</div><div class="mn">अन्जन श्रेष्ठ</div><div class="mr">सदस्य/उपाध्यक्ष — FNCCI</div></div>
+      <div class="mc"><div class="ma">ना</div><div class="mn">नारायण अधिकारी</div><div class="mr">सदस्य — गैसस/नागरिक समाज</div></div>
+      <div class="mc"><div class="ma">भी</div><div class="mn">डा. भीष्म भूसाल</div><div class="mr">सदस्य-सचिव/सहसचिव — प्रम.म.प.</div></div>
+    </div>
+    <div class="hb hb-b" style="margin-top:20px">
+      <div class="ht">📝 समितिको ऐतिहासिक महत्व</div>
+      <p>यो समितिमा सरकारी अधिकारी, <strong>जेनजी युवा प्रतिनिधि</strong>, निजी क्षेत्र (FNCCI) र नागरिक समाज सबैको सहभागिता छ — नेपालको प्रशासनिक इतिहासमा अभूतपूर्व। जेनजी आन्दोलन (भदौ २३–२४, २०८२) बाट प्रेरित भई युवाहरूको सक्रिय संलग्नता सुनिश्चित गरिएको छ। ३११+ सरकारी अधिकारीहरूको योगदानमा यो प्रतिवेदन तयार भएको छ।</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft">सुशासन मार्गचित्र २०८२</div>
+  <p>नेपाल सरकार | प्रधानमन्त्री तथा मन्त्रिपरिषद्को कार्यालय | सिंहदरबार, काठमाडौं</p>
+  <p style="margin-top:6px">मिति: <strong>२०८२ चैत ३</strong> | संयोजक: <strong>गोविन्द बहादुर कार्की, सचिव</strong></p>
+  <p style="margin-top:10px;font-size:11px;opacity:.4">Good Governance Blueprint — Interactive Visualization</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+function sv(id,btn){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+}
+function ot(e,id){
+  document.querySelectorAll('.tc').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.tb').forEach(b=>b.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  e.target.classList.add('on');
+}
+function ta(el){el.classList.toggle('open')}
+
+new Chart(document.getElementById('sc1'),{
+  type:'bar',
+  data:{
+    labels:['अन्तरसरकारी','अर्थ/कर','उद्योग','पर्यटन','सहकारी','सार्व.संस्थान','वित्त PFM','सार्व.खरिद','पूर्वाधार','खानेपानी','ऊर्जा','IT/सञ्चार','शिक्षा','स्वास्थ्य','कृषि','भूमि','सामाजिक','नागरिक सेवा','भ्रष्टाचार'],
+    datasets:[{label:'सुधार कार्य',data:[18,24,22,19,16,14,28,20,47,15,18,16,20,18,18,22,20,24,18],backgroundColor:'rgba(198,40,40,0.85)',borderRadius:3}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{font:{size:10},maxRotation:45,color:'#555'}},y:{ticks:{color:'#555'},grid:{color:'rgba(0,0,0,0.06)'}}}}
+});
+
+new Chart(document.getElementById('kc'),{
+  type:'bar',
+  data:{
+    labels:['GIOMS पत्राचार','अनलाइन सेवाहरू','कर्मचारी तालिम','हरित उद्यान (वडा)','फोहोर व्यवस्थापन','नक्साास पास अनलाइन','भवन पुनर्निर्माण','PPP आयोजना','सम्पत्ति डिजिटल','स्मार्ट ट्राफिक'],
+    datasets:[{label:'लक्ष्य %',data:[90,85,75,90,80,100,70,75,100,70],backgroundColor:['#C62828','#E65100','#1565C0','#2E7D32','#00695C','#880E4F','#C62828','#F57F17','#283593','#4A148C'],borderRadius:6}]
+  },
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{max:110,ticks:{callback:v=>v+'%',color:'#555'},grid:{color:'rgba(0,0,0,0.06)'}},y:{ticks:{font:{size:12},color:'#333'}}}}
+});
+</script>
+</body>
+</html>
